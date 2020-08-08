@@ -3,7 +3,7 @@
     padding: 0px;
     transition: .2s all ease;
     font-family: 'Raleway', sans-serif;
-/*     overflow: hidden; */
+    overflow-y: hidden;
     box-sizing: border-box;
 }
 .wrapper{
