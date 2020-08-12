@@ -35,7 +35,7 @@ html, body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(1, 100vw);
+  grid-template-columns: repeat(11, 100vw);
   grid-template-rows: 100%;
   width: 100%;
   height: 100%;
@@ -270,6 +270,8 @@ html, body {
   grid-template-rows: 2fr 10fr 1fr;
   /*150 and 85/// */
   grid-template-columns: minmax(400px, 1fr) 1.35fr;
+  width: 100vw;
+  height: 100vh;
   background: #f6f6f6;
 }
 .screen4__left_bg {
@@ -474,6 +476,8 @@ html, body {
 
 .screen6 {
   grid-template-columns: 1fr 1.35fr;
+  width: 100vw;
+  height: 100vh;
 }
 .screen6_left_side {
   grid-row: 2/3;
@@ -492,6 +496,7 @@ html, body {
 .screen6_right_side {
   grid-row: 2/3;
   grid-column: 2/3;
+  height: 100vh;
 }
 .screen6_right_side__block {
   width: 100%;
