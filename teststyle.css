@@ -1,7 +1,4 @@
 @charset "UTF-8";
-/*::-webkit-scrollbar {
-    width: 0;
-}*/
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -40,22 +37,45 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-y: hidden;
+  background: #ffffff;
 }
 
 .standart_button {
   background-color: #1b1b1b;
-  width: 352px;
-  height: 74px;
-  font-size: 22px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  z-index: 400;
+  width: 260px;
+  min-width: max-content;
+  margin-top: 2rem;
+  padding: 1rem;
   border-radius: 37px;
-  word-wrap: normal;
-  box-shadow: 0 19px 54px rgba(143, 12, 80, 0.45), 0 23px 60px rgba(58, 9, 35, 0.45);
+  box-shadow: 0px 6px 12px 0px rgba(108, 10, 61, 0.45), 0px 5px 10px rgba(58, 9, 35, 0.45);
+  font-size: 1rem;
+  font-weight: 400;
   text-align: center;
   color: #ffffff;
-  font-weight: 400;
+  transition: 0.5 all ease;
+  cursor: pointer;
+  word-wrap: normal;
+}
+.standart_button:hover {
+  background: #df0c70;
+}
+
+.screen6_left_side_buttons_variant.variant_active {
+  background: #a4a4a4;
 }
 
 .screen {
+  grid-row: 1/2;
   display: grid;
   grid-template-rows: 150px 10fr 85px;
   /*150 and 85///2fr 10fr 1fr; */
@@ -69,12 +89,28 @@ html, body {
   grid-row: 1/2;
   content: "";
   padding: 2rem;
+  position: relative;
+}
+.screen__header > * {
+  cursor: pointer;
 }
 .screen__header .logo {
   float: left;
+  width: 6.3vmax;
 }
 .screen__header .menu {
   float: right;
+}
+.screen__header:after {
+  position: absolute;
+  text-transform: uppercase;
+  color: #d7d7d7;
+  letter-spacing: 0.1rem;
+  font-weight: 900;
+  font-size: 0.9rem;
+  right: 0%;
+  top: 50vh;
+  transform: rotate(-90deg);
 }
 .screen__footer {
   z-index: 100;
@@ -90,10 +126,11 @@ html, body {
   display: flex;
   flex-flow: row;
   color: rgba(200, 200, 200, 0.55);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.44px;
+  cursor: pointer;
 }
 .screen .screen__next_scr__arrow__line {
   display: inline-block;
@@ -115,16 +152,16 @@ html, body {
   align-items: center;
   flex-flow: row;
   padding-right: 1rem;
-  /*&__vk{background: url("img/logos/vk_logo.png") no-repeat;}
-  &__fb{background: url("img/logos/fb_logo.png") no-repeat;background-position: 50% 50%}
-  &__yt{background: url("img/logos/youtube_logo.png") no-repeat;}*/
 }
 .screen .social_sites > * {
-  padding-right: 3rem;
+  padding-right: 1.1rem;
   z-index: 100;
   opacity: 0.5;
 }
 
+.screen1 {
+  grid-column: 1/2;
+}
 .screen1__box {
   grid-column: 1/-1;
   grid-row: 1/-1;
@@ -140,6 +177,7 @@ html, body {
 }
 
 .screen2 {
+  grid-column: 2/3;
   background-color: #f6f6f6;
 }
 .screen2__left_side {
@@ -188,39 +226,51 @@ html, body {
 }
 
 .screen3 {
+  grid-column: 3/4;
   background-color: #f6f6f6;
+  position: relative;
 }
-.screen3__left_side {
+.screen3 > .screen__header:after {
+  content: "О РЕДИСЕ";
+}
+.screen3__left_bg {
   grid-row: 1/4;
   grid-column: 1/2;
   background: url("img/screen3/screen3_leftpurple.png") 0 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0%;
+  z-index: 10;
+}
+.screen3__left_side {
+  grid-row: 1/4;
+  grid-column: 1/2;
   display: flex;
   flex-flow: column;
   align-items: flex-start;
-}
-.screen3__left_side > * {
-  padding: 50px 150px 0px 2rem;
+  z-index: 20;
 }
 .screen3__left_side__header {
   white-space: pre-line;
   font-weight: 900;
   color: #ffffff;
   font-size: 3rem;
-  padding-top: 170px;
+  padding: 170px 150px 0px 2rem;
+  z-index: 30;
 }
 .screen3__left_side__text {
   font-weight: 400;
   white-space: pre-line;
   font-size: 1rem;
   color: #ffffff;
+  padding: 50px 150px 0px 2rem;
+  z-index: 30;
 }
 .screen3__left_side__button {
-  background-color: #1b1b1b;
+  margin-left: 2rem;
+  /*background-color: #1b1b1b;
   padding: 0rem 3rem 0rem 3rem;
-  margin: 2rem;
+  margin: 2rem ;
   min-width: min-content;
   height: 4rem;
   border-radius: 37px;
@@ -232,12 +282,12 @@ html, body {
   line-height: 4rem;
   cursor: pointer;
   z-index: 100;
-  transition: 0.5 all;
+  transition: .5 all;*/
 }
 .screen3__left_side__button:hover {
-  background: #a4a4a4;
-  color: #1b1b1b;
-  box-shadow: 0 19px 54px rgba(143, 12, 80, 0.45), 0 23px 60px rgba(58, 9, 35, 0.45);
+  /*background: $darkgrey-clr;
+  color: $dark-clr;
+  box-shadow: 0 19px 54px rgba(143, 12, 80, 0.45), 0 23px 60px rgba(58, 9, 35, 0.45);*/
 }
 .screen3__right_side {
   background: #f6f6f6;
@@ -267,12 +317,12 @@ html, body {
 }
 
 .screen4 {
-  grid-template-rows: 2fr 10fr 1fr;
-  /*150 and 85/// */
-  grid-template-columns: minmax(400px, 1fr) 1.35fr;
-  width: 100vw;
-  height: 100vh;
+  grid-column: 4/5;
   background: #f6f6f6;
+  grid-template-columns: 1fr 1.35fr;
+}
+.screen4 > .screen__header:after {
+  content: "полезные свойства";
 }
 .screen4__left_bg {
   grid-row: 1/-1;
@@ -283,120 +333,135 @@ html, body {
   grid-row: 2/-1;
   grid-column: 1/2;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 .screen4__left_side__radish_block {
-  width: 100%;
   height: 100%;
   position: relative;
 }
 .screen4__left_side__radish_block__info_item {
   position: absolute;
   font-size: 1rem;
-}
-.screen4__left_side__radish_block__info_item:after, .screen4__left_side__radish_block__info_item:before {
-  height: 50px;
-  width: 50px;
   color: #ffffff;
-  border-radius: 50%;
   background: #1b1b1b;
   display: inline-block;
   text-align: center;
-  line-height: 74px;
+  width: 3.7rem;
+  height: 3.7rem;
+  line-height: 3.7rem;
+  border-radius: 50%;
+  z-index: 100;
+  right: 0%;
+  bottom: 0%;
+}
+.screen4__left_side__radish_block__info_item:after, .screen4__left_side__radish_block__info_item:before {
+  width: 3.7rem;
+  height: 3.7rem;
+  line-height: 3.7rem;
+  color: #1b1b1b;
+  border-radius: 70%;
+  text-align: center;
+  line-height: 1rem;
+  position: absolute;
+  left: -214%;
+  top: 40%;
 }
 .screen4__left_side__radish_block__info_item:nth-child(1) {
-  left: 17%;
-  top: 5%;
+  left: 37.3%;
+  top: 5.4%;
 }
-.screen4__left_side__radish_block__info_item:nth-child(1):after {
-  content: "1,6 г";
+.screen4__left_side__radish_block__info_item:nth-child(1):before {
+  content: "Пищевые";
+  left: -214%;
+  top: 40%;
 }
 .screen4__left_side__radish_block__info_item:nth-child(2) {
-  right: 29%;
-  top: 27%;
+  left: 68%;
+  top: 28.4%;
 }
-.screen4__left_side__radish_block__info_item:nth-child(2):before {
-  content: "93 г";
+.screen4__left_side__radish_block__info_item:nth-child(2):after {
+  content: "Вода";
+  left: 156%;
+  top: 40%;
 }
 .screen4__left_side__radish_block__info_item:nth-child(3) {
-  left: 5%;
-  top: 45%;
+  left: 34%;
+  top: 40.5%;
 }
-.screen4__left_side__radish_block__info_item:nth-child(3):after {
-  content: "1,2 г";
+.screen4__left_side__radish_block__info_item:nth-child(3):before {
+  content: "Белки";
+  left: -214%;
+  top: 40%;
 }
 .screen4__left_side__radish_block__info_item:nth-child(4) {
-  right: 7%;
-  top: 55%;
+  left: 61%;
+  top: 51.5%;
 }
-.screen4__left_side__radish_block__info_item:nth-child(4):before {
-  content: "0,1 г";
+.screen4__left_side__radish_block__info_item:nth-child(4):after {
+  content: "Жиры";
+  left: 166%;
+  top: 40%;
 }
 .screen4__left_side__radish_block__info_item:nth-child(5) {
-  left: 2%;
-  top: 64%;
+  left: 39%;
+  top: 62%;
 }
-.screen4__left_side__radish_block__info_item:nth-child(5):after {
-  content: "3,4 г";
+.screen4__left_side__radish_block__info_item:nth-child(5):before {
+  content: "Углеводы";
+  left: -214%;
+  top: 40%;
 }
 .screen4__left_side__radish_block__cutted_radish_img {
-  padding-bottom: 3rem;
-  height: 100%;
-  width: 100%;
+  padding: 0rem 0rem 1rem 3rem;
+  max-height: 100%;
+  max-width: 100%;
   object-fit: contain;
 }
 .screen4__right_side {
   grid-column: 2/3;
-  grid-row: 2/3;
-  margin: 0 auto;
+  grid-row: 1/3;
+  padding-top: 150px;
   width: 100%;
   display: flex;
   flex-flow: column;
   align-items: flex-start;
 }
 .screen4__right_side__header {
-  margin: 0 auto;
-  width: 80%;
+  padding: 1.5rem 2rem 2rem 7.2rem;
   white-space: pre-line;
   font-weight: 900;
   color: #1b1b1b;
-  font-size: 3rem;
+  font-size: 3.2rem;
+  letter-spacing: 1px;
 }
 .screen4__right_side__text {
-  padding: 0 auto;
-  padding-right: 7rem;
+  padding: 1.8rem 3rem 2rem 7.2rem;
+  margin: 0rem 5rem 0rem 0rem;
   font-weight: 400;
   white-space: pre-line;
   font-size: 2vh;
   color: #a4a4a4;
-  margin: 0 auto;
-  margin-top: 2rem;
-  width: 80%;
+  line-height: 1.5rem;
 }
 .screen4__right_side__text > span {
   color: #1b1b1b;
   font-weight: 700;
 }
-.screen4__right_side__button_container {
-  margin: 0 auto;
-  width: 80%;
-  margin-top: 3rem;
+.screen4__right_side .scr4_text_el_2 {
+  padding: 0rem 5rem 2rem 7.2rem;
 }
-.screen4__right_side__button_container .screen4__right_side__button {
-  background-color: #1b1b1b;
-  width: 352px;
-  height: 4rem;
-  font-size: 2vh;
-  border-radius: 37px;
-  word-wrap: normal;
-  box-shadow: 0 19px 34px rgba(108, 10, 61, 0.45), 0 3px 40px rgba(58, 9, 35, 0.45);
-  text-align: center;
-  color: #f6f6f6;
-  font-weight: 700;
-  line-height: 4rem;
+.screen4__right_side .screen4__right_side__button {
+  margin: 0rem 1rem 1rem 7rem;
 }
 
 .screen5 {
+  grid-column: 5/6;
   background: #f6f6f6;
+}
+.screen5 > .screen__header:after {
+  content: "стоимость";
 }
 .screen5__sorts {
   grid-row: 2/3;
@@ -475,9 +540,13 @@ html, body {
 }
 
 .screen6 {
+  grid-column: 6/7;
   grid-template-columns: 1fr 1.35fr;
-  width: 100vw;
-  height: 100vh;
+  /*  width: 100vw;
+    height: 100vh;*/
+}
+.screen6 > .screen__header:after {
+  content: "рецепты";
 }
 .screen6_left_side {
   grid-row: 2/3;
@@ -485,18 +554,45 @@ html, body {
   display: flex;
   flex-flow: column nowrap;
 }
-.screen6_left_side > * {
-  margin: 0rem 2rem 0rem 2rem;
-}
 .screen6_left_side__header {
   color: #1b1b1b;
-  font-size: 4rem;
+  font-size: 3.4rem;
   font-weight: 900;
+  line-height: 2.5rem;
+  margin: 0rem 5rem 0rem 2rem;
+}
+.screen6_left_side__text {
+  margin: 3rem 5rem 0rem 2rem;
+  color: #a4a4a4;
+}
+.screen6_left_side_buttons {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 2rem 5rem 0rem 2rem;
+}
+.screen6_left_side_buttons_variant {
+  background: #e9e9e9;
+  border-radius: 23px;
+  padding: 10px 2rem;
+  margin: 1rem 1rem 0rem 0rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1rem;
+  box-sizing: border-box;
+  color: #1b1b1b;
+  cursor: pointer;
+}
+.screen6_left_side_buttons_variant:hover {
+  background: #a4a4a4;
+}
+.screen6_left_side_search_button {
+  margin: 2rem 2rem 0rem 2rem;
 }
 .screen6_right_side {
-  grid-row: 2/3;
   grid-column: 2/3;
-  height: 100vh;
+  grid-row: 1/-1;
+  position: relative;
+  padding: 150px 40px 100px 0px;
 }
 .screen6_right_side__block {
   width: 100%;
@@ -504,13 +600,16 @@ html, body {
   position: relative;
 }
 .screen6_right_side__block__cutting_board {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .screen7 {
+  grid-column: 7/8;
   background: #1b1b1b;
+}
+.screen7 > .screen__header:after {
+  content: "все блюда";
 }
 .screen7_content__row {
   grid-row: 2/3;
@@ -561,6 +660,132 @@ html, body {
   font-style: italic;
 }
 
+.screen8 {
+  grid-column: 8/9;
+  grid-template-columns: 1fr 1.35fr;
+  background: #f6f6f6;
+}
+.screen8 > .screen__header:after {
+  content: "окрошка на кефире";
+}
+.screen8__left_side {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  display: flex;
+  flex-flow: column;
+}
+.screen8__left_side__header {
+  white-space: pre-line;
+  font-weight: 900;
+  color: #1b1b1b;
+  font-size: 3.4rem;
+  letter-spacing: 0rem;
+  line-height: 3.4rem;
+  padding: 167px 150px 0px 3rem;
+  z-index: 30;
+}
+.screen8__left_side__text {
+  font-weight: 400;
+  white-space: pre-line;
+  font-size: 1rem;
+  color: #757575;
+  padding: 3rem 150px 0px 3rem;
+  line-height: 1.7rem;
+  z-index: 30;
+}
+.screen8__left_side .scr8_ls_t2 {
+  padding: 2rem 150px 0px 3rem;
+}
+.screen8__left_side__search_button {
+  margin-left: 2rem;
+}
+.screen8__right_side {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  display: flex;
+  align-items: flex-end;
+  /*.okroshka_item{
+  position: absolute;
+
+  &>img{
+    width: 50px;
+    height: 30px;
+  }*/
+}
+.screen8__right_side__block {
+  position: relative;
+  width: 86%;
+  padding-right: 5rem;
+}
+.screen8__right_side__block__cutting_board {
+  max-width: 100%;
+  max-height: 100%;
+}
+.screen8__right_side__block .container__okroshka_item {
+  position: absolute;
+  top: -25%;
+  width: 17%;
+}
+.screen8__right_side__block .container__okroshka_item:before {
+  content: "+";
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  font-size: 2rem;
+  background: #ffffff;
+  box-shadow: 0 13px 35px rgba(23, 23, 23, 0.2);
+  border-radius: 50%;
+  z-index: 100;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+.screen8__right_side__block .container__okroshka_item1 {
+  left: -15%;
+  top: -30%;
+}
+.screen8__right_side__block .container__okroshka_item2 {
+  left: 11%;
+  top: -27%;
+}
+.screen8__right_side__block .container__okroshka_item3 {
+  left: 40%;
+  top: -27%;
+  width: 15%;
+}
+.screen8__right_side__block .container__okroshka_item4 {
+  left: 73%;
+  top: -25%;
+}
+.screen8__right_side__block .container__okroshka_item5 {
+  left: -15%;
+  top: 14%;
+}
+.screen8__right_side__block .container__okroshka_item6 {
+  left: 11%;
+  top: 15%;
+}
+.screen8__right_side__block .container__okroshka_item7 {
+  left: 40%;
+  top: 15%;
+}
+.screen8__right_side__block .container__okroshka_item8 {
+  left: 70%;
+  top: 18%;
+}
+.screen8__right_side__block .okroshka_item {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.screen9 {
+  grid-column: 9/10;
+}
+.screen9 > .screen__header:after {
+  content: "окрошка на кефире";
+}
 .screen9__left_side {
   grid-column: 1/2;
   grid-row: 2/3;
@@ -599,7 +824,12 @@ html, body {
 }
 
 .screen10 {
+  grid-column: 10/11;
   grid-template-columns: 1fr 1fr;
+}
+.screen10 > .screen__header:after {
+  content: "старт продаж";
+  z-index: 100;
 }
 .screen10__left_side {
   grid-row: 1/4;
@@ -616,7 +846,6 @@ html, body {
   }*/
 }
 .screen10__left_side__date {
-  width: 67%;
   position: absolute;
   width: 70%;
   top: 27%;
@@ -636,25 +865,32 @@ html, body {
 .screen10__right_side__purple_box {
   position: relative;
   /* transform: translate(-50%, -50%); */
-  width: 22vw;
-  height: 42vh;
+  width: 23.6vw;
+  height: 44.2vh;
   min-height: 200px;
   background: url("img/screen10/scr10_purple_box.png") no-repeat;
   background-size: cover;
 }
+.screen10__right_side__purple_box:before {
+  /*        content: "I am Here";
+          font-size: 10rem;
+          background: url("img/screen10/radish_scr10.png");
+          width: 664px;
+          height: 414px;*/
+}
 .screen10__right_side__purple_box > img {
   max-height: 100%;
-  max-width: 100%;
+  max-width: 80%;
   position: absolute;
   bottom: 0%;
+}
+.screen10__right_side__purple_box > .scr10_radish_img {
+  transform: translate(-148%, 89%);
 }
 .screen10__right_side__purple_box > .number_eight {
   transform: translate(-50%, 62%);
 }
 .screen10__right_side__purple_box > .number_two {
-  max-height: 100%;
-  max-width: 100%;
-  position: absolute;
   transform: translate(-157%, 62%);
   bottom: 0%;
 }
@@ -675,15 +911,18 @@ html, body {
 }
 .screen10__info_block {
   z-index: 200;
+  padding: 0.9rem 0rem 2rem 2rem;
   grid-row: 1/4;
   grid-column: 2/3;
-  margin-top: 33vh;
-  margin-left: 12vw;
+  height: 100%;
+  width: 140%;
   background: #ffffff;
-  padding: 2rem;
+  position: absolute;
+  left: 47.4%;
+  top: 83%;
 }
 .screen10__info_block__header {
-  font-size: 4rem;
+  font-size: 3.5vmax;
   font-weight: 900;
   color: #1b1b1b;
 }
@@ -691,41 +930,31 @@ html, body {
   font-size: 1rem;
   font-weight: 400;
   color: #a4a4a4;
-  padding-right: 9vw;
-  padding-top: 2rem;
   line-height: 1.4rem;
+  padding: 2rem 6rem 0rem 0rem;
+  line-height: 1.7rem;
 }
-.screen10__info_block__button {
-  background-color: #1b1b1b;
-  padding: 0rem 3rem 0rem 3rem;
-  margin-top: 2rem;
-  width: 17vw;
-  min-width: max-content;
-  border-radius: 37px;
-  word-wrap: normal;
-  text-align: center;
-  color: #f6f6f6;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 3rem;
-  cursor: pointer;
-  z-index: 100;
-  transition: 0.5 all;
-}
-.screen10__info_block__button:hover {
-  background: #a4a4a4;
-  color: #1b1b1b;
-  box-shadow: 0 19px 54px rgba(143, 12, 80, 0.45), 0 23px 60px rgba(58, 9, 35, 0.45);
-}
-
 .screen_menu {
-  position: fixed;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  z-index: -1000;
+  opacity: 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(20px, 100px) 1fr minmax(30px, 200px);
-  background: url("img/screen_menu/bg_scr_menu.png") rgba(27, 27, 27, 0.7);
+  background: url("img/screen_menu/bg_scr_menu.png");
+  background-color: #1b1b1b;
+  background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.screen_menu__close_botton {
+  grid-column: 1/2;
+  grid-template-rows: 1/2;
+  justify-self: end;
+  align-self: center;
+  right: 5%;
+  position: relative;
 }
 .screen_menu__items {
   grid-row: 2/3;
@@ -738,6 +967,11 @@ html, body {
   font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
+  cursor: pointer;
+}
+
+.oppac1 {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=teststyle.css.map */
