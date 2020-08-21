@@ -5,7 +5,9 @@
    <title>test rc</title>
    <link rel="stylesheet" href="teststyle.css">
    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+   <style>
+      .screen{transform: translate(0%, 0%)}
+   </style>
 </head>
 <body>
    <div class="wrapper">
@@ -15,10 +17,6 @@
          </div>
       </aside>
       <aside class="screen2 screen" id="scr2">
-         <div class="screen__header">
-            <img class="logo" src="img/small_logo.png" alt="logo" >
-            <img class="menu" src="img/menu_button.png" alt="menu" class="menu" located-on-scr="#scr2" >
-         </div>
          <div class="screen2__left_side">
             <div class="screen2__left_side__header">Это
                сочный
@@ -49,10 +47,6 @@
          </div>
       </aside>
       <aside class="screen3 screen" id="scr3">
-         <div class="screen__header">
-            <img class="logo" src="img/small_logo.png" alt="logo">
-            <img class="menu" src="img/menu_button.png" alt="menu" class="menu" located-on-scr="#scr3">
-         </div>
          <div class="screen3__left_bg"></div>
          <div class="screen3__left_side">
             <h2 class="screen3__left_side__header">Вся правда
@@ -89,10 +83,6 @@
          </div>
       </aside>
       <aside class="screen4 screen" id="scr4">
-         <div class="screen__header">
-            <img src="img/small_logo.png" alt="logo" class="logo">
-            <img src="img/menu_button.png" alt="menu"  class="menu" located-on-scr="#scr4">
-         </div>
          <div class="screen4__left_bg"></div>
          <div class="screen4__left_side">
             <div class="screen4__left_side__radish_block">
@@ -135,16 +125,12 @@
          </div>
       </aside>
       <aside class="screen5 screen" id="scr5">
-         <div class="screen__header">
-            <img src="img/small_logo.png" alt="logo" class="logo">
-            <img src="img/menu_button.png" alt="menu" class="menu" located-on-scr="#scr5">
-         </div>
          <div class="screen5__sorts">
             <div class="screen5__sorts__sort_of_radish">
                <div class="screen5__sorts__sort_of_radish__block">
-                  <div class="screen5__sorts__sort_of_radish__block__info_container">
+                  <!--<div class="screen5__sorts__sort_of_radish__block__info_container">
                      <div class="screen5__sorts__sort_of_radish__block__info__item info_standart">Стандарт</div>
-                  </div>
+                  </div>-->
                   <img class="screen5__sorts__sort_of_radish__block__image" src="img/screen5/screen5_radish_standart.png" alt="radish_standart">
                </div>
                <div class="screen5__sorts__sort_of_radish__text">
@@ -157,9 +143,9 @@
             </div>
             <div class="screen5__sorts__sort_of_radish">
                <div class="screen5__sorts__sort_of_radish__block">
-                  <div class="screen5__sorts__sort_of_radish__block__info_container">
+                  <!--<div class="screen5__sorts__sort_of_radish__block__info_container">
                      <div class="screen5__sorts__sort_of_radish__block__info__item info_premium">Премиум</div>
-                  </div>
+                  </div>-->
                   <img class="screen5__sorts__sort_of_radish__block__image" src="img/screen5/screen5_rabish_premium.png" alt="radish_standart">
                </div>
                <div class="screen5__sorts__sort_of_radish__text">
@@ -187,15 +173,11 @@
          </div>
       </aside>
       <aside class="screen6 screen" id="scr6">
-         <div class="screen__header">
-            <img src="img/small_logo.png" alt="logo" class="logo">
-            <img src="img/menu_button.png" alt="menu" class="menu" located-on-scr="#scr6">
-         </div>
          <div class="screen6_left_side">
             <div class="screen6_left_side__header">Попробуй редис на вкус</div>
             <div class="screen6_left_side__text">Выбери тип блюда</div>
             <div class="screen6_left_side_buttons">
-               <div class="screen6_left_side_buttons_variant variant_active">Все блюда</div>
+               <div class="screen6_left_side_buttons_variant">Все блюда</div>
                <div class="screen6_left_side_buttons_variant">Салаты</div>
                <div class="screen6_left_side_buttons_variant">Закуски</div>
                <div class="screen6_left_side_buttons_variant">Супы</div>
@@ -224,10 +206,6 @@
          </div>
       </aside>
       <aside class="screen7 screen" id="scr7">
-         <div class="screen__header">
-            <img src="img/logos/small_logo_white.png" alt="logo" class="logo">
-            <img src="img/logos/menu_white.png" alt="menu" class="menu" located-on-scr="#scr7">
-         </div>
 
          <div class="screen7_content__row">
                <div class="dish dish__1">
@@ -264,10 +242,6 @@
          </div>
       </aside>
       <aside class="screen8 screen" id="scr8">
-         <div class="screen__header">
-            <img src="img/small_logo.png" alt="logo" class="logo">
-            <img src="img/menu_button.png" alt="menu" class="menu" located-on-scr="#scr8">
-         </div>
          <!--content start-->
          <div class="screen8__left_side">
             <h2 class="screen8__left_side__header">Приготовь свою окрошку</h2>
@@ -278,14 +252,78 @@
          <div class="screen8__right_side">
             <div class="screen8__right_side__block">
                <img class="screen8__right_side__block__cutting_board" src="img/screen8/empty_plate_scr8.png" alt="cutting_board">
-               <div class="container__okroshka_item container__okroshka_item1"><img class="okroshka_item okroshka_item1" src="img/screen8/kefir_item1.png" alt="kefir"> </div>
-               <div class="container__okroshka_item container__okroshka_item2"><img class="okroshka_item okroshka_item2" src="img/screen8/kolbasa_yeeeeh_item2.png" alt="kolbasa"> </div>
-               <div class="container__okroshka_item container__okroshka_item3"><img class="okroshka_item okroshka_item3" src="img/screen8/cucumber_item3.png" alt="cucumber"> </div>
-               <div class="container__okroshka_item container__okroshka_item4"><img class="okroshka_item okroshka_item4" src="img/screen8/eggs_item4.png" alt="eggs"> </div>
-               <div class="container__okroshka_item container__okroshka_item5"><img class="okroshka_item okroshka_item5" src="img/screen8/radish_item5.png" alt="radish"> </div>
-               <div class="container__okroshka_item container__okroshka_item6"><img class="okroshka_item okroshka_item6" src="img/screen8/gren_item6.png" alt="gren"> </div>
-               <div class="container__okroshka_item container__okroshka_item7"><img class="okroshka_item okroshka_item7" src="img/screen8/potato_item7.png" alt="potato"> </div>
-               <div class="container__okroshka_item container__okroshka_item8"><img class="okroshka_item okroshka_item8" src="img/screen8/salt_item8.png" alt="salt"> </div>
+               <div class="container__okroshka_item container__okroshka_item1">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item1_block">
+                     <img class="okroshka_item okroshka_item1" src="img/screen8/kefir_item1.png" alt="kefir">
+                  </div>
+               </div>
+               <div class="container__okroshka_item container__okroshka_item2">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item2_block">
+                     <img class="okroshka_item okroshka_item2" src="img/screen8/kolbasa_yeeeeh_item2.png" alt="kolbasa">
+                  </div>
+               </div>
+               <div class="container__okroshka_item container__okroshka_item3">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item3_block">
+                     <img class="okroshka_item okroshka_item3" src="img/screen8/cucumber_item3.png" alt="cucumber">
+                  </div>
+               </div>
+               <div class="container__okroshka_item container__okroshka_item4">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item4_block">
+                     <img class="okroshka_item okroshka_item4" src="img/screen8/eggs_item4.png" alt="eggs">
+                  </div>
+               </div>
+               <div class="container__okroshka_item container__okroshka_item5">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item5_block">
+                     <img class="okroshka_item okroshka_item5" src="img/screen8/radish_item5.png" alt="radish">
+                  </div>
+               </div>
+               <div class="container__okroshka_item container__okroshka_item6">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item6_block">
+                     <img class="okroshka_item okroshka_item6" src="img/screen8/gren_item6.png" alt="gren">
+                  </div>
+               </div>
+               <div class="container__okroshka_item container__okroshka_item7">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item7_block">
+                     <img class="okroshka_item okroshka_item7" src="img/screen8/potato_item7.png" alt="potato">
+                  </div>
+               </div>
+               <div class="container__okroshka_item container__okroshka_item8">
+                  <div class="plus_block">
+                     <div class="plus_block__hor_line"></div>
+                     <div class="plus_block__ver_line"></div>
+                  </div>
+                  <div class="okroshka_item_block okroshka_item8_block">
+                     <img class="okroshka_item okroshka_item8" src="img/screen8/salt_item8.png" alt="salt">
+                  </div>
+               </div>
             </div>
          </div>
          <!--content end-->
@@ -305,10 +343,6 @@
          </div>
       </aside>
       <aside class="screen9 screen" id="scr9">
-         <div class="screen__header">
-            <img src="img/small_logo.png" alt="logo" class="logo">
-            <img src="img/menu_button.png" alt="menu" class="menu" located-on-scr="#scr9">
-         </div>
          <div class="screen9__left_side">
             <div class="screen9__left_side__title">
                Приятного
@@ -320,7 +354,6 @@
                <img src="img/screen9/plate_okroshka.png" alt="plate_with_okroshka">
             </div>
          </div>
-
          <div class="screen__footer">
             <div class="screen__next_scr">
                <p class="screen__next_scr__text" next-scr="#scr10">Листать</p>
@@ -337,25 +370,13 @@
          </div>
       </aside>
       <aside class="screen10 screen" id="scr10">
-         <div class="screen__header">
-            <img src="img/small_logo.png" alt="logo" class="logo">
-            <img src="img/menu_button.png" alt="menu" class="menu" located-on-scr="#scr10">
-         </div>
-         <div class="screen10__left_side">
-            <!--<div class="screen10__left_side__radish">
-               <img src="img/screen10/radish_scr10.png" alt="radish">
-            </div>-->
-           <!-- <div class="screen10__left_side__date">
-            </div>-->
-<!--               <div class="screen10__left_side__date__month">июня</div>-->
-         </div>
-
+         <div class="screen10__left_side"></div>
          <div class="screen10__right_side">
             <div class="screen10__right_side__purple_box">
                <img class="number_eight" src="img/screen10/eight_num_with_white_corner.png" alt="twenty_eight">
                <img class="number_two" src="img/screen10/num-two.png" alt="twenty_eight">
                <img class="scr10_radish_img" src="img/screen10/radish_scr10.png" alt="">
-               <div class="month">июня</div>
+               <img class="month" src="img/screen10/month_june_picture.jpg">
                <div class="screen10__info_block">
                   <div class="screen10__info_block__header">Старт продаж</div>
                   <div class="screen10__info_block__text">Оставьте заявку если хотите первыми попробовать новый продукт. Мы свяжемся с вами и расскажем как получить бесплатные образцы для дегустации!</div>
@@ -363,7 +384,6 @@
                </div>
             </div>
          </div>
-
          <div class="screen__footer">
             <div class="screen__next_scr">
                <p class="screen__next_scr__text" next-scr="#scr3">Листать</p>
@@ -380,14 +400,37 @@
          </div>
       </aside>
       <div class="screen_menu">
-         <div class="screen_menu__close_botton"><img src="img/screen_menu/full_menu_close_button.png" alt=""></div>
+         <div class="screen_menu__header">
+            <div class="screen_menu__logo">
+               <img class="logo_scr1" src="img/small_logo.png" alt="logo">
+               <div class="white_logo_block">
+                  <img src="img/logos/small_logo_white.png" alt="">
+               </div>
+            </div>
+            <img class="menu_scr1" src="img/menu_button.png" alt="menu" located-on-scr="#scr1" >
+         </div>
+         <!--<div class="screen_menu__close_botton"><img src="img/screen_menu/full_menu_close_button.png" alt=""></div>
          <div class="screen_menu__items">
-            <div class="screen_menu__item"><p go-from-menu="#scr1">Главная</p></div>
-            <div class="screen_menu__item"><p go-from-menu="#scr3">О редисе</p></div>
-            <div class="screen_menu__item"><p go-from-menu="#scr4">Полезные свойства</p></div>
-            <div class="screen_menu__item"><p go-from-menu="#scr5">Стоимость</p></div>
-            <div class="screen_menu__item"><p go-from-menu="#src6">Рецепты</p></div>
-            <div class="screen_menu__item"><p go-from-menu="#scr10">Старт продаж</p></div>
+            <div class="screen_menu__item" go-from-menu="#scr1"><p go-from-menu="#scr1">Главная</p></div>
+            <div class="screen_menu__item" go-from-menu="#scr3"><p go-from-menu="#scr3">О редисе</p></div>
+            <div class="screen_menu__item" go-from-menu="#scr4"><p go-from-menu="#scr4">Полезные свойства</p></div>
+            <div class="screen_menu__item" go-from-menu="#scr5"><p go-from-menu="#scr5">Стоимость</p></div>
+            <div class="screen_menu__item" go-from-menu="#src6"><p go-from-menu="#src6">Рецепты</p></div>
+            <div class="screen_menu__item" go-from-menu="#scr10"><p go-from-menu="#scr10">Старт продаж</p></div>
+         </div>-->
+         <div class="screen__footer">
+            <div class="screen__next_scr">
+               <p class="screen__next_scr__text" next-scr="#scr6">Листать</p>
+               <div class="screen__next_scr__arrow" next-scr="#scr6">
+                  <div class="screen__next_scr__arrow__line"></div>
+                  <div class="screen__next_scr__arrow__degree"></div>
+               </div>
+            </div>
+            <div class="social_sites">
+               <div class="social_sites__vk"><img src="img/logos/vk_logo.png" alt=""></div>
+               <div class="social_sites__fb"><img src="img/logos/fb_logo.png" alt=""></div>
+               <div class="social_sites__yt"><img src="img/logos/youtube_logo.png" alt=""></div>
+            </div>
          </div>
       </div>
    </div>
