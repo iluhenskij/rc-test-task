@@ -1,5 +1,12 @@
 let app = document.querySelector('.wrapper');
 const styleTag = document.querySelector("style")
+//GO TO PAGE FUNCTION
+function goToPage(pageNum){
+   pageNum = pageNum*100-100;
+   pagePosition = pageNum;
+   console.log(pageNum);
+   styleTag.innerHTML = `.screen{transform: translate(-${pageNum}%, 0%)}`
+}
 
 //SCREEN6
 let typesOfRecieps = document.querySelector(".screen6_left_side_buttons")
@@ -19,12 +26,43 @@ typesOfRecieps.addEventListener("click",(event)=>{
 })
 
 
-//SCREEN MENU
-document.querySelector(".screen_menu__logo")
+// MENU HEADER
+const logo = document.querySelector(".header__logo")
+logo.addEventListener("click",()=>{goToPage(1)})
 
+
+const menuBotton = document.querySelector(".menu_button")
+function menuBottonOpen(event){
+   console.log("opening...");
+   menuBlock.style.zIndex = 1300
+   setTimeout(()=>{
+      menuBlock.classList.add("opacity1")
+   },50)
+
+}
+function menuClose(){
+   menuBlock.classList.remove("opacity1")
+   setTimeout(()=>{
+      menuBlock.style.zIndex = -1300
+   },500)
+}
+menuBotton.addEventListener("click",menuBottonOpen)
+//MENU MAIN
+const menuBlock = document.querySelector(".screen_menu")
+menuBlock.addEventListener("click",(event)=>{
+   if (!event.target.hasAttribute("go-from-menu"))return;
+   menuClose()
+   goToPage(event.target.getAttribute("go-from-menu"));
+})
+
+
+
+//SCROLL
+let touchStartInfo = null;
+let touchEndInfo = null;
 let pagePosition = 0;
 function scroolOnTranslate(event){
-   console.log("working" ,event);
+   // console.log("working" ,event);
    setTimeout(()=> {
       window.addEventListener('wheel', scroolOnTranslate)
    },200)
@@ -37,29 +75,27 @@ function scroolOnTranslate(event){
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
 }
+window.addEventListener('wheel', scroolOnTranslate);
+
+//SCROLL MOBILE
 function mobileScroolOnTranslate(event){
-   console.log("working mobile" ,event);
-   if (event.deltaX>20){
+   // console.log("working mobile" ,event);
+   if (event.deltaX>40){
       pagePosition>=900?{}:pagePosition += 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
-   }else if(event.deltaX<-20) {
+   }
+   else if(event.deltaX<-40) {
       pagePosition<=0?{}:pagePosition -= 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
 }
-
-let touchStartInfo = null;
-let touchEndInfo = null;
-window.addEventListener('wheel', scroolOnTranslate);
-
-
 window.addEventListener("touchstart",(event)=> {
    touchStartInfo = event.changedTouches[0];
    touchEndInfo;
-   console.log(event);
+   // console.log(event);
 })
 window.addEventListener("touchend",(event)=> {
-   console.log(event);
+   // console.log(event);
    touchEndInfo = event.changedTouches[0];
    // console.log([touchStartInfo, touchEndInfo])
    fakeDeltaX = touchStartInfo.clientX - touchEndInfo.clientX
@@ -68,6 +104,10 @@ window.addEventListener("touchend",(event)=> {
    touchStartInfo = null;
    touchEndInfo = null;
 })
+
+
+
+
 
 
 
