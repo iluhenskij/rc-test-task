@@ -286,10 +286,10 @@ let pagePosition = 0;
 
 function scrollOnTranslate(event){
    // console.log("working" ,event);
+   window.removeEventListener("wheel",scrollOnTranslate)
    setTimeout(()=> {
       window.addEventListener('wheel', scrollOnTranslate)
-   },200)
-   window.removeEventListener("wheel",scrollOnTranslate)
+   },600)
    if (event.deltaY>0||event.deltaX>0){
       pagePosition>=900?{}:pagePosition += 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
@@ -305,11 +305,16 @@ window.addEventListener('wheel', scrollOnTranslate);
 //SCROLL MOBILE
 function mobileScrollOnTranslate(event){
    // console.log("working mobile" ,event);
-   if (event.deltaX>40){
+   window.removeEventListener("wheel",mobileScrollOnTranslate)
+   setTimeout(()=> {
+      window.addEventListener('wheel', mobileScrollOnTranslate)
+   },650)
+
+   if (event.deltaX>200){
       pagePosition>=900?{}:pagePosition += 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
-   else if(event.deltaX<-40) {
+   else if(event.deltaX< -200) {
       pagePosition<=0?{}:pagePosition -= 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
