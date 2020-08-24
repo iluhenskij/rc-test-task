@@ -285,16 +285,16 @@ let touchEndInfo = null;
 let pagePosition = 0;
 
 function scrollOnTranslate(event){
-   // console.log("working" ,event);
+   console.log("working" ,event);
    window.removeEventListener("wheel",scrollOnTranslate)
    setTimeout(()=> {
       window.addEventListener('wheel', scrollOnTranslate)
    },600)
-   if (event.deltaY>0||event.deltaX>0){
+   if (event.deltaY>30||event.deltaX>30){
       pagePosition>=900?{}:pagePosition += 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
-   else{
+   else if(event.deltaY>-30||event.deltaX>-30) {
       pagePosition<=0?{}:pagePosition -= 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
@@ -304,7 +304,7 @@ window.addEventListener('wheel', scrollOnTranslate);
 
 //SCROLL MOBILE
 function mobileScrollOnTranslate(event){
-   // console.log("working mobile" ,event);
+   console.log("working mobile" ,event);
    window.removeEventListener("wheel",mobileScrollOnTranslate)
    setTimeout(()=> {
       window.addEventListener('wheel', mobileScrollOnTranslate)
