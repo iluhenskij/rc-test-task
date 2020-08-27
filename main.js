@@ -290,11 +290,11 @@ function scrollOnTranslate(event){
    setTimeout(()=> {
       window.addEventListener('wheel', scrollOnTranslate)
    },600)
-   if (event.deltaY>30||event.deltaX>30){
+   if (event.deltaY>0||event.deltaX>0){
       pagePosition>=900?{}:pagePosition += 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
-   else if(event.deltaY>-30||event.deltaX>-30) {
+   else if(event.deltaY<0||event.deltaX<0) {
       pagePosition<=0?{}:pagePosition -= 100;
       styleTag.innerHTML = `.screen{transform: translate(-${pagePosition}%, 0%)}`
    }
